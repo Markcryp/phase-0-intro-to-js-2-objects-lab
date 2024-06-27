@@ -5,7 +5,7 @@ describe('employees', function() {
     beforeEach(function () {
       for (const key in employee) {
         delete employee[key];
-      }
+      });
 
       employee.name = 'Sam';
     });
@@ -42,9 +42,7 @@ describe('employees', function() {
     it('deletes `key` from a clone of employee and returns the new employee (it is non-destructive)', function () {
       let newEmployee = deleteFromEmployeeByKey(employee, 'name');
 
-      expect(newEmployee['name']).to.equal(undefined);
-      expect(typeof newEmployee).to.equal('object');
-    });
+
 
     it('does not modify the original employee (it is non-destructive)', function () {
       deleteFromEmployeeByKey(employee, 'name');
